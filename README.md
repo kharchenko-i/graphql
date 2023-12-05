@@ -18,6 +18,8 @@ To use the application, you need to log in with your 01 Intra username/e-mail an
 
 Once you're logged in, the application displays your basic identification information, XP amount, grades, audits, and skills.
 
+Hosting webpage https://kharchenko-i.github.io/graphql/
+
 ### Audit
 
 ### [How to audit] (https://github.com/01-edu/public/tree/master/subjects/graphql/audit) for the audit.
