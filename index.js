@@ -90,7 +90,7 @@ async function request() {
   })
     .then((response) => response.json())
     .then((result) => {
-      const { email, firstName, lastName, telNum, city, country } =
+      const { email, firstName, lastName, tel, addressCity, country } =
         result.data.user[0].attrs;
       const { totalDown, totalUp } = result.data.user[0];
       const transactions = result.data.user[0].transactions;
@@ -118,8 +118,10 @@ async function request() {
       const auditReceived = totalDown / 1000;
       document.getElementById("name").textContent = firstName + " " + lastName;
       document.getElementById("email").textContent = email;
-      document.getElementById("from").textContent = city + "," + country;
-      document.getElementById("phone").textContent = telNum;
+      document.getElementById("from").textContent =
+        addressCity + ", " + country;
+      document.getElementById("phone").textContent = tel;
+
       document.getElementById("xp").textContent =
         (totalXp / 1000).toFixed(0) + "kB";
       document.getElementById("audit-done").textContent = `${auditDone.toFixed(
