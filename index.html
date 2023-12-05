@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="app">
+    <form id="login-form">
+      <h1>Welcome</h1>
+      <input id="username-input" type="text" placeholder="Username/Email">
+      </input>
+      <input id="password-input" type="password" placeholder="Password">
+      </input>
+      <p id="error-container"></p>
+      <button id="submit" type="submit">Submit</button>
+    </form>
+    <div id="profile-container" style="display: none;">
+      <button id="logout-button" type="button">Log Out</button>
+      <div class="profile">
+        <div class="card">
+          <h2>Basic</h2>
+          <ul class="info-list">
+            <li><strong>Name:</strong> <span id="name"></span></li>
+            <li><strong>Email:</strong> <span id="email"></span></li>
+            <li><strong>From:</strong> <span id="from"></span></li>
+            <li><strong>Phone:</strong> <span id="phone"></span></li>
+            <li><strong>XP:</strong> <span id="xp"></span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Tasks</h2>
+          <div id="pie-container">
+            <svg id="pie-chart"></svg>
+          </div>
+          <div id="pie-tooltip"></div>
+        </div>
+        <div class="card">
+          <h2>Audits ratio data</h2>
+          <ul class="audit-list">
+            <li><strong>Done:</strong> <span id="audit-done"></span></li>
+            <li><strong>Received:</strong> <span id="audit-received"></span></li>
+            <li><strong>Total:</strong> <span id="audit-ratio"></span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Progress over time</h2>
+          <div class="line-container">
+            <svg id="line-chart"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
