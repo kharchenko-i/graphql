@@ -95,6 +95,21 @@ async function request() {
       const { totalDown, totalUp } = result.data.user[0];
       const transactions = result.data.user[0].transactions;
 
+      const monthNames = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+
       let totalXp = 0;
       let pieData = [{ label: "", value: 0 }];
       let lineData = [{ month: "", value: 0 }];
@@ -106,7 +121,8 @@ async function request() {
           !/piscine-go/.test(path)
         ) {
           const date = new Date(createdAt);
-          const month = date.toLocaleString("default", { month: "long" });
+          //        const month = date.toLocaleString("default", { month: "long" });
+          const month = monthNames[date.getMonth()]; // Manually extract month
 
           totalXp += amount;
           pieData.push({ label: path, value: amount / 1000 });
